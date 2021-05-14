@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
-const bookRoute = require("./api/book/bookRouter");
+const bookRoute = require("./src/api/book/bookRouter");
 
 app.use(cors());
 app.use(express.json());
@@ -29,5 +29,3 @@ mongoose
     })
   )
   .catch((err) => console.log(err));
-
-module.exports = app;
