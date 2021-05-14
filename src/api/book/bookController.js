@@ -11,6 +11,7 @@ const getAllBooks = (req, res) => {
 };
 
 const createBook = (req, res) => {
+  console.log(req.body);
   BookService.createBook(req.body)
     .then((result) => {
       res.send(result);

@@ -7,7 +7,11 @@ const bookSchema = new Schema(
       type: String,
       required: true,
     },
-    writer: {
+    author: {
+      type: String,
+      required: true,
+    },
+    category: {
       type: String,
       required: true,
     },
@@ -23,10 +27,7 @@ const bookSchema = new Schema(
       type: String,
       required: true,
     },
-    isBuyed: {
-      type: Boolean,
-      required: true,
-    },
+    isBuyed: Boolean,
   },
   { timestamps: true }
 );
