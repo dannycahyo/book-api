@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
 const bookRoute = require("./src/api/book/bookRouter");
+require("dotenv/config");
 
 app.use(cors());
 app.use(express.json());
@@ -18,8 +19,7 @@ app.use("/book", bookRoute);
 
 const PORT = process.env.PORT || 3000;
 
-const dbURI =
-  "mongodb://dannygg:ggwp123@nodeapp-shard-00-00.la8gg.mongodb.net:27017,nodeapp-shard-00-01.la8gg.mongodb.net:27017,nodeapp-shard-00-02.la8gg.mongodb.net:27017/book_management?ssl=true&replicaSet=atlas-sdo70z-shard-0&authSource=admin&retryWrites=true&w=majority";
+const dbURI = process.env.DB_URI;
 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
